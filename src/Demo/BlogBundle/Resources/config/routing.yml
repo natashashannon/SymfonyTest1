@@ -1,0 +1,7 @@
+demo_blog_post:
+    resource: "@DemoBlogBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+demo_blog_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DemoBlogBundle:Default:index }

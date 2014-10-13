@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+   <div class="container">
+   <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+        {% for entity in entities %}
+                <h3><span><a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                {{ entity.title }}</span></h3>
+                <p>{{ entity.body }}</p>
+                <i>{% if entity.publishedAt %}{{ entity.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</i>
+
+              
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+
+<footer class="row">            
+<a href="{{ path('post_new') }}">
+                Create a new entry
+            </a>
+
+</footer>
+    {% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}A blog site{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-9"> <a href="/login" class="btn btn-default">Login</a>
+                <a href="/register/" class="btn btn-default">Create an Account</a>
+            </div>
+        </div>
+        <div class="row" style="padding:0px 0px 30px 0px">
+            <div class="col-md-12">
+
+                <h3 class="text-muted">Project name</h3>
+
+                <div class="row"  style="padding-top:0px">
+                    <div class="col-md-12">
+                        <h4>A great subheading goes a long way</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="/" class="nav navbar-nav">Home</a>
+                </li>
+                <li><a href="/post" class="nav navbar-nav">Blog Posts</a>
+                </li>
+                <li><a href="/post/new" class="nav navbar-nav">New Blog Post</a>
+                </li>
+            </ul>
+        </nav>
+
+    {% block body %}{% endblock %} {% block stylesheets %} {% stylesheets '@bootstrap_less' combine=true %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet"> {% endstylesheets %} {% endblock %} {% block javascripts %} {% javascripts '@jquery_js' '@bootstrap_js' filter='?yui_js' combine=true %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} {% endblock %}
+</div>
+</body>
+
+</html>

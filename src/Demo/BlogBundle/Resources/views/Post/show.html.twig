@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-sm-12 col-md-12"><h3>{{ entity.title }}</h3>
+        </div>
+    </div>         
+    <div class="row">
+        <div class="col-sm-12 col-md-12"><p>{{ entity.body }}</p>
+        </div>
+    </div>
+</div>
+        <footer class="row">
+        
+        <a href="{{ path('post_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+        <p><a href="{{ path('post') }}">
+            Back to the list
+        </a>    
+</footer>
+</div>
+{% endblock %}
